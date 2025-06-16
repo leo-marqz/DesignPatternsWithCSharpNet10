@@ -1,0 +1,5 @@
+¿Qué es el Principio de Responsabilidad Única (SRP)?
+Una clase (o módulo) debe tener una única razón para cambiar.
+Eso significa que debe tener una sola responsabilidad o propósito. 
+Si una clase tiene múltiples razones para cambiar, está haciendo más de 
+lo que debería y se vuelve difícil de mantener y escalar.
