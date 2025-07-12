@@ -1,5 +1,6 @@
 ﻿using DesignPatternsWithCSharpNet10.Helpers;
 using DesignPatternsWithCSharpNet10.Solid.OpenClosedPrinciple;
+using DesignPatternsWithCSharpNet10.Solid.OpenClosedPrinciple.Exercise;
 using DesignPatternsWithCSharpNet10.Solid.SingleResponsabilityPrinciple;
 using DesignPatternsWithCSharpNet10.Solid.SingleResponsabilityPrinciple.Exercise;
 using Spectre.Console;
@@ -18,34 +19,59 @@ namespace DesignPatternsWithCSharpNet10
             // Ejemplo #1 de Open Closed Principle
             //=====================================================================
 
-            List<IApplicant> applicants = new List<IApplicant>() {
-                new Person{ FirstName="Rodrigo", LastName="Morales" },
-                new Doctor { FirstName="Miguel", LastName="Sandoval" },
-                new Nurse{ FirstName="Robert", LastName="Martin" },
-                new SoftwareEngineer { FirstName = "Elmer", LastName = "Marquez" }
+
+
+            var shapes = new List<IShape>()
+            {
+                new Circle{ Radius = 2.5 },
+                new Rectangle { Width = 5.0, Heigh = 7.0 }
             };
 
-            List<Staff> staffs = new List<Staff>();
-
-            foreach(IApplicant applicant in applicants)
-            {
-                staffs.Add(applicant.Processor.Create(applicant));
-            }
-
             var table = new Table();
-            table.AddColumn("Nombre");
-            table.AddColumn("Apellido");
-            table.AddColumn("Email");
-            table.AddColumn("Rol");
+            table.AddColumn("Shape");
+            table.AddColumn("Area");
 
-            foreach(Staff staff in staffs)
+            foreach(var shape in shapes)
             {
-                table.AddRow(staff.FirstName, staff.LastName, staff.Email, staff.Role.GetDisplayName());
+                table.AddRow(shape.GetType().Name, shape.Area().ToString());
             }
 
             AnsiConsole.Write(table);
 
             Console.ReadKey();
+
+
+
+
+
+            //List<IApplicant> applicants = new List<IApplicant>() {
+            //    new Person{ FirstName="Rodrigo", LastName="Morales" },
+            //    new Doctor { FirstName="Miguel", LastName="Sandoval" },
+            //    new Nurse{ FirstName="Robert", LastName="Martin" },
+            //    new SoftwareEngineer { FirstName = "Elmer", LastName = "Marquez" }
+            //};
+
+            //List<Staff> staffs = new List<Staff>();
+
+            //foreach(IApplicant applicant in applicants)
+            //{
+            //    staffs.Add(applicant.Processor.Create(applicant));
+            //}
+
+            //var table = new Table();
+            //table.AddColumn("Nombre");
+            //table.AddColumn("Apellido");
+            //table.AddColumn("Email");
+            //table.AddColumn("Rol");
+
+            //foreach(Staff staff in staffs)
+            //{
+            //    table.AddRow(staff.FirstName, staff.LastName, staff.Email, staff.Role.GetDisplayName());
+            //}
+
+            //AnsiConsole.Write(table);
+
+            //Console.ReadKey();
 
             //======================================================================
             //Ejemplo #2 de Single Responsibility Principle (SRP)
