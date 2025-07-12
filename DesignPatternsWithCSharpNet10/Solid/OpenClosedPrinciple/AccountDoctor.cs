@@ -1,9 +1,7 @@
 ﻿
-using System;
-
 namespace DesignPatternsWithCSharpNet10.Solid.OpenClosedPrinciple
 {
-    public class AccountService : IAccountService
+    public class AccountDoctor : IAccountService
     {
         public Staff Create(IApplicant applicant)
         {
@@ -11,8 +9,8 @@ namespace DesignPatternsWithCSharpNet10.Solid.OpenClosedPrinciple
             {
                 FirstName = applicant.FirstName,
                 LastName = applicant.LastName,
-                Email = $"{applicant.FirstName.ToLower()}.{applicant.LastName.ToLower()}@staff.com",
-                Role = Role.Staff
+                Email = $"{applicant.FirstName.ToLower()}.{applicant.LastName.ToLower()}@doctor.com",
+                Role = Role.Doctor
             };
         }
     }

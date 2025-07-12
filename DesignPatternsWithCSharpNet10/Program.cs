@@ -1,4 +1,5 @@
-﻿using DesignPatternsWithCSharpNet10.Solid.OpenClosedPrinciple;
+﻿using DesignPatternsWithCSharpNet10.Helpers;
+using DesignPatternsWithCSharpNet10.Solid.OpenClosedPrinciple;
 using DesignPatternsWithCSharpNet10.Solid.SingleResponsabilityPrinciple;
 using DesignPatternsWithCSharpNet10.Solid.SingleResponsabilityPrinciple.Exercise;
 using Spectre.Console;
@@ -17,28 +18,29 @@ namespace DesignPatternsWithCSharpNet10
             // Ejemplo #1 de Open Closed Principle
             //=====================================================================
 
-            List<Person> persons = new List<Person>() {
-                new Person{ FirstName="Rodrigo", LastName="Morales", Role=Role.Doctor },
-                new Person { FirstName="Miguel", LastName="Sandoval", Role=Role.Nurse},
-                new Person{FirstName="Robert", LastName="Martin"}
+            List<IApplicant> applicants = new List<IApplicant>() {
+                new Person{ FirstName="Rodrigo", LastName="Morales" },
+                new Doctor { FirstName="Miguel", LastName="Sandoval" },
+                new Nurse{ FirstName="Robert", LastName="Martin" },
+                new SoftwareEngineer { FirstName = "Elmer", LastName = "Marquez" }
             };
 
             List<Staff> staffs = new List<Staff>();
 
-            foreach(Person person in persons)
+            foreach(IApplicant applicant in applicants)
             {
-                staffs.Add(new AccountService().Create(person));
+                staffs.Add(applicant.Processor.Create(applicant));
             }
 
             var table = new Table();
-            table.AddColumn("Firstname");
-            table.AddColumn("Lastname");
+            table.AddColumn("Nombre");
+            table.AddColumn("Apellido");
             table.AddColumn("Email");
-            table.AddColumn("Is Doctor ?");
+            table.AddColumn("Rol");
 
             foreach(Staff staff in staffs)
             {
-                table.AddRow(staff.FirstName, staff.LastName, staff.Email, staff.Role.ToString());
+                table.AddRow(staff.FirstName, staff.LastName, staff.Email, staff.Role.GetDisplayName());
             }
 
             AnsiConsole.Write(table);
