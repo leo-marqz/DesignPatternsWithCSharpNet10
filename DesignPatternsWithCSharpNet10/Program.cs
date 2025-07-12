@@ -1,6 +1,11 @@
-﻿using DesignPatternsWithCSharpNet10.Solid.SingleResponsabilityPrinciple;
+﻿using DesignPatternsWithCSharpNet10.Solid.OpenClosedPrinciple;
+using DesignPatternsWithCSharpNet10.Solid.SingleResponsabilityPrinciple;
 using DesignPatternsWithCSharpNet10.Solid.SingleResponsabilityPrinciple.Exercise;
+using Spectre.Console;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DesignPatternsWithCSharpNet10
 {
@@ -8,6 +13,38 @@ namespace DesignPatternsWithCSharpNet10
     {
         static void Main(string[] args)
         {
+            //=====================================================================
+            // Ejemplo #1 de Open Closed Principle
+            //=====================================================================
+
+            List<Person> persons = new List<Person>() {
+                new Person{ FirstName="Rodrigo", LastName="Morales", Role=Role.Doctor },
+                new Person { FirstName="Miguel", LastName="Sandoval", Role=Role.Nurse},
+                new Person{FirstName="Robert", LastName="Martin"}
+            };
+
+            List<Staff> staffs = new List<Staff>();
+
+            foreach(Person person in persons)
+            {
+                staffs.Add(new AccountService().Create(person));
+            }
+
+            var table = new Table();
+            table.AddColumn("Firstname");
+            table.AddColumn("Lastname");
+            table.AddColumn("Email");
+            table.AddColumn("Is Doctor ?");
+
+            foreach(Staff staff in staffs)
+            {
+                table.AddRow(staff.FirstName, staff.LastName, staff.Email, staff.Role.ToString());
+            }
+
+            AnsiConsole.Write(table);
+
+            Console.ReadKey();
+
             //======================================================================
             //Ejemplo #2 de Single Responsibility Principle (SRP)
             //======================================================================

@@ -14,7 +14,6 @@ namespace DesignPatternsWithCSharpNet10.Solid.SingleResponsabilityPrinciple.Exer
             {
                 throw new ArgumentNullException(nameof(entry), "Entry cannot be null");
             }
-
             Entries.Add(entry);
         }
 
