@@ -34,5 +34,15 @@ namespace DesignPatternsWithCSharpNet10.Solid.InterfaceSegregationPrinciple
         {
             throw new System.NotImplementedException();
         }
+
+        public Task SendFaxAsync(string recipientNumber)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void SetDocumentFormat(DocumentFormat format)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

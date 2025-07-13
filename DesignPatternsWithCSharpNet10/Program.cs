@@ -9,16 +9,20 @@ namespace DesignPatternsWithCSharpNet10
         static void Main(string[] args)
         {
             //=====================================================================
+            // Ejemplo #1 de Dependency Inversion Principle
+            //=====================================================================
+
+            //=====================================================================
             // Ejemplo #1 de Interface Segregation Principle
             //=====================================================================
-            
 
-            var printer = new HPSmartPrinter();
 
-            printer.ConnectBluetooth();
-            printer.SetDocumentFormat(DocumentFormat.PDF);
-            printer.SendFaxAsync("+50322223344");
-            printer.Print();
+            //var printer = new HPSmartPrinter();
+
+            //printer.ConnectBluetooth();
+            //printer.SetDocumentFormat(DocumentFormat.PDF);
+            //printer.SendFaxAsync("+50322223344");
+            //printer.Print();
 
 
             //=====================================================================
