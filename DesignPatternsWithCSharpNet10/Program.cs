@@ -1,61 +1,65 @@
-﻿using DesignPatternsWithCSharpNet10.Helpers;
-using DesignPatternsWithCSharpNet10.Solid.LiskovSubstitutionPrinciple;
-using DesignPatternsWithCSharpNet10.Solid.OpenClosedPrinciple;
-using DesignPatternsWithCSharpNet10.Solid.OpenClosedPrinciple.Exercise;
-using DesignPatternsWithCSharpNet10.Solid.SingleResponsabilityPrinciple;
-using DesignPatternsWithCSharpNet10.Solid.SingleResponsabilityPrinciple.Exercise;
-using Spectre.Console;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿
+
+using DesignPatternsWithCSharpNet10.Solid.InterfaceSegregationPrinciple;
 
 namespace DesignPatternsWithCSharpNet10
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             //=====================================================================
+            // Ejemplo #1 de Interface Segregation Principle
+            //=====================================================================
+            
+
+            var printer = new HPSmartPrinter();
+
+            printer.ConnectBluetooth();
+            printer.SetDocumentFormat(DocumentFormat.PDF);
+            printer.SendFaxAsync("+50322223344");
+            printer.Print();
+
+
+            //=====================================================================
             // Ejemplo #1 de Liskov Substitution Principle
             //=====================================================================
 
-            IPlayer player = new TennisPlayer();
-            player.FirstName = "Walter";
-            player.LastName = "Montillo";
-            player.Category = PlayerCategory.Profesional;
+            //IPlayer player = new TennisPlayer();
+            //player.FirstName = "Walter";
+            //player.LastName = "Montillo";
+            //player.Category = PlayerCategory.Profesional;
 
-            IPlayer player2 = new FootballPlayer()
-            {
-                FirstName = "Elmer",
-                LastName = "Marquez",
-                Category = PlayerCategory.Profesional
-            };
+            //IPlayer player2 = new FootballPlayer()
+            //{
+            //    FirstName = "Elmer",
+            //    LastName = "Marquez",
+            //    Category = PlayerCategory.Profesional
+            //};
 
-            var table = new Table();
-            table.AddColumn("Nombre");
-            table.AddColumn("Apellido");
-            table.AddColumn("Categoria");
-            table.AddColumn("Deporte");
+            //var table = new Table();
+            //table.AddColumn("Nombre");
+            //table.AddColumn("Apellido");
+            //table.AddColumn("Categoria");
+            //table.AddColumn("Deporte");
 
-            table.AddRow(
-                    player.FirstName, 
-                    player.LastName, 
-                    player.Category.GetDisplayName(),
-                    player.GetType().Name
-                );
+            //table.AddRow(
+            //        player.FirstName, 
+            //        player.LastName, 
+            //        player.Category.GetDisplayName(),
+            //        player.GetType().Name
+            //    );
 
-            table.AddRow(
-                   player2.FirstName,
-                   player2.LastName,
-                   player2.Category.GetDisplayName(),
-                   player2.GetType().Name
-               );
+            //table.AddRow(
+            //       player2.FirstName,
+            //       player2.LastName,
+            //       player2.Category.GetDisplayName(),
+            //       player2.GetType().Name
+            //   );
 
-            AnsiConsole.Write(table);
+            //AnsiConsole.Write(table);
 
-            Console.ReadKey();
+            //Console.ReadKey();
 
             //┌────────┬──────────┬─────────────┬────────────────┐
             //│ Nombre │ Apellido │ Categoria   │ Deporte        │
