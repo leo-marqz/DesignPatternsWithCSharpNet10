@@ -12,4 +12,12 @@
     <PackageReference Include="Spectre.Console.Cli" Version="0.50.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Patterns\Creational\Builder\" />
+    <Folder Include="Patterns\Creational\Factory\" />
+    <Folder Include="Patterns\Creational\Singleton\" />
+    <Folder Include="Patterns\Creational\Prototype\" />
+    <Folder Include="Patterns\Structural\" />
+  </ItemGroup>
+
 </Project>
