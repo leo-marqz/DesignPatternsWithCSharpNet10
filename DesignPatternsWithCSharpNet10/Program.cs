@@ -1,19 +1,30 @@
 ﻿
-
-using DesignPatternsWithCSharpNet10.Solid.DependencyInversionPrinciple;
-using DesignPatternsWithCSharpNet10.Solid.InterfaceSegregationPrinciple;
+using DesignPatternsWithCSharpNet10.Solid.DependencyInversionPrinciple.Exercise;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DesignPatternsWithCSharpNet10
 {
     public class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             //=====================================================================
             // Ejemplo #1 de Dependency Inversion Principle
             //=====================================================================
+
+            //List<INotification> notifications = new List<INotification>
+            //{
+            //    new SMS{ Subject="+503 68473891", Content="Hola...Responde carajo!" },
+            //    new Email{ Subject="Oferta de Empleo", Content="Hola buen dia...bla bla.." }
+            //};
+
+            //var employee = new Employee(notifications);
+
+            //await employee.SendNotificationAsync();
+
+            //Console.ReadKey();
 
             //List<Employee> employees = new List<Employee>
             //{
