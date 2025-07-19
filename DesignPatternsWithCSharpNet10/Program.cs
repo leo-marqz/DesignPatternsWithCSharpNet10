@@ -1,6 +1,9 @@
 ﻿
 
+using DesignPatternsWithCSharpNet10.Solid.DependencyInversionPrinciple;
 using DesignPatternsWithCSharpNet10.Solid.InterfaceSegregationPrinciple;
+using System;
+using System.Collections.Generic;
 
 namespace DesignPatternsWithCSharpNet10
 {
@@ -11,6 +14,27 @@ namespace DesignPatternsWithCSharpNet10
             //=====================================================================
             // Ejemplo #1 de Dependency Inversion Principle
             //=====================================================================
+
+            //List<Employee> employees = new List<Employee>
+            //{
+            //    new Employee{ Name="Rodrigo", Role = Role.Manager, Gender = Gender.Male },
+            //    new Employee{ Name="Robert", Role=Role.Executive, Gender = Gender.Male },
+            //    new Employee{ Name="Martin", Role = Role.Executive, Gender = Gender.Male },
+            //    new Employee{ Name="Vanesa", Role = Role.Executive, Gender = Gender.Female },
+            //    new Employee{ Name="Elmer", Role = Role.Developer, Gender = Gender.Male }
+            //};
+
+            //var employeeManager = new EmployeeManager();
+            //foreach (Employee employee in employees)
+            //{
+            //    employeeManager.Save(employee);
+            //}
+
+            //var search = new EmployeeSearch(employeeManager);
+
+            //Console.WriteLine($"Cantidad de empleados ejecutivos y de genero masculino: {search.GetMaleExecutives()}");
+
+            //Console.ReadKey();
 
             //=====================================================================
             // Ejemplo #1 de Interface Segregation Principle
