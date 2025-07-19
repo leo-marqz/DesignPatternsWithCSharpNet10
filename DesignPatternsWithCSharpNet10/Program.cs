@@ -1,5 +1,7 @@
 ﻿
+using DesignPatternsWithCSharpNet10.Patterns.Creational.Builder;
 using DesignPatternsWithCSharpNet10.Solid.DependencyInversionPrinciple.Exercise;
+using Spectre.Console;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -10,6 +12,55 @@ namespace DesignPatternsWithCSharpNet10
     {
         static async Task Main(string[] args)
         {
+            //=====================================================================
+            // Design Pattern: Builder
+            //=====================================================================
+
+            //Otra opcion: FluentBuilder
+            //Solo se necesita un builder y este tiene todas las propiedades necesarias para crear
+            //algo, muy usado en java: por ejemplo puedo decir: sandwich.ConQueso().ConMayonesa()
+            //    .ConPanIntegral().ConLechuga()
+            //    .Build() -> nos regresa el sandwich con lo solicitado.
+
+            //var builder1 = new SandwichAssembly(new CheeseBurger());
+            //    builder1.Assemble();
+            //var builder2 = new SandwichAssembly(new ChickenAvocadoSandwich());
+            //    builder2.Assemble();
+            //var builder3 = new SandwichAssembly(new CheeseBurger());
+            //    builder3.Assemble();
+
+            //List<Sandwich> sandwiches = new List<Sandwich>();
+            //sandwiches.Add(builder1.GetSandwich);
+            //sandwiches.Add(builder2.GetSandwich);
+            //sandwiches.Add(builder3.GetSandwich);
+
+            //var table = new Table();
+            //table.AddColumn("Sandwich Type");
+            //table.AddColumn("Bread");
+            //table.AddColumn("Cheese");
+            //table.AddColumn("Protein");
+            //table.AddColumn("Condiments");
+            //table.AddColumn("Veggies");
+
+            //foreach(var sandwich in sandwiches)
+            //{
+            //    table.AddRow(
+            //            sandwich.Type,
+            //            sandwich.Bread,
+            //            sandwich.Cheese,
+            //            sandwich.Protein,
+            //            sandwich.Condiments,
+            //            sandwich.Veggies
+            //            );
+            //    table.AddEmptyRow();
+            //}
+
+            //AnsiConsole.Write(table);
+            //Console.ReadKey();
+
+            //var sandwich = new Sandwich("Pan frica", "", "Carne", "Mayonesa, Mostaza", "Quezo cheddar");
+
+
             //=====================================================================
             // Ejemplo #1 de Dependency Inversion Principle
             //=====================================================================

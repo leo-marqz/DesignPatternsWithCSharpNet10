@@ -13,7 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Patterns\Creational\Builder\" />
     <Folder Include="Patterns\Creational\Factory\" />
     <Folder Include="Patterns\Creational\Singleton\" />
     <Folder Include="Patterns\Creational\Prototype\" />
