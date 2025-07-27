@@ -1,5 +1,6 @@
 ﻿
 using DesignPatternsWithCSharpNet10.Patterns.Creational.Builder;
+using DesignPatternsWithCSharpNet10.Patterns.Creational.Factory.Method;
 using DesignPatternsWithCSharpNet10.Solid.DependencyInversionPrinciple.Exercise;
 using Spectre.Console;
 using System;
@@ -14,6 +15,16 @@ namespace DesignPatternsWithCSharpNet10
             //=====================================================================
             // Design Pattern: Factory Method & Abstract Factory
             //=====================================================================
+
+            //Factory Method
+            //--------------
+
+            //User user = User.Factory.CreateWithDefaultCountry("Elmer", "ellmarquez@email.com");
+            //User user2 = User.Factory.CreateWithDefaultEmail("Elmer", "Nueva Zelanda");
+
+            //Console.WriteLine(user);
+            //Console.WriteLine(user2);
+
 
             //=====================================================================
             // Design Pattern: Builder
