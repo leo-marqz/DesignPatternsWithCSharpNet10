@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DesignPatternsWithCSharpNet10.Patterns.Creational.Factory.Method.Exercise
 {
-    public class Pizza
+    public abstract class Pizza
     {
         public string Name { get; set; }
         protected string Dough;
@@ -21,5 +21,6 @@ namespace DesignPatternsWithCSharpNet10.Patterns.Creational.Factory.Method.Exerc
 
         public void Bake() => Console.WriteLine("Cocinar por 20 minutos...");
         public void Cut() => Console.WriteLine("Pizza fue cortada en partes iguales");
+        public void Box() => Console.WriteLine("Pizza colocada en la caja");
     }
 }
